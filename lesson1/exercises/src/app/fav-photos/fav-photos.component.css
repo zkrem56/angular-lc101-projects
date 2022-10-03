@@ -1,5 +1,6 @@
 h3 {
    color: brown;
+   text-decoration: underline;
 }
 
 img {
@@ -9,4 +10,6 @@ img {
 
 .photos {
    text-align: center;
+   border-right: dashed;
+   border-left: dashed;
 }
