@@ -5,7 +5,7 @@
         <div class="candidates col-3">
             <h2>Candidates</h2>
             <ol>
-                <li *ngFor = 'let candid of candidates' (click)="selected = candid">{{candid.name}}</li>
+                <li *ngFor = 'let candid of candidates' (click)="selected = candid; addToCrew(candid)">{{candid.name}}</li>
             </ol>
         </div>
     
@@ -22,14 +22,15 @@
         <div class="centered col-3">
             <h2>Sidekick</h2>
             <!-- Use *ngIf and the correct placeholder to display a sidekick's image -->
-            <img src="{{placeholder}}" alt="OOPS! No image available."/>
+            <img *ngIf='selected' src="{{selected.image}}" alt="OOPS! No image available."/>
         </div>
 
         <div class="crew col-3">
             <h2>Selected Crew</h2>
             <ul>
-                <li>Use *ngFor to list the selected crew.</li>
+                <li *ngFor="let crewMates of crew">{{crewMates.name}}</li>
             </ul>
+            <button *ngIf='crew.length !== 0' (click)="crew = []">Clear Crew List</button>
             <!-- Add a "Clear Crew List" button here. -->
         </div>
     </div>
