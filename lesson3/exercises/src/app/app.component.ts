@@ -23,23 +23,25 @@ export class AppComponent {
     }
   }
 
-  handleLand(){
+  handleLand(rocketImage){
     let result = window.confirm('Are you sure you want to land the shuttle?');
     if (result){
       this.color = 'green';
       this.height = 0;
       this.width = 0;
       this.message = 'Shuttle has landed';
+      rocketImage.style.bottom = 0;
     }
   }
 
-  handleAbortMission(){
+  handleAbortMission(rocketImage){
     let result = window.confirm('Are you sure you want to abort the mission?');
     if (result){
       this.color = 'red';
       this.height = 0;
       this.width = 0;
       this.message = 'Mission Aborted';
+      rocketImage.style.bottom = 0;
     }
   }
 
